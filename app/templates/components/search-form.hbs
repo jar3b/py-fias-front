@@ -1,0 +1,21 @@
+<div class="ui main text container">
+    <div class="ui piled segment">
+        <div class="ui fluid action input">
+            {{input type="text" placeholder=placeholder value=searchText action="search" on="key-up"}}
+            <button {{action 'search' searchText}} class="ui icon button">
+                <i class="search icon"></i>
+            </button>
+        </div>
+        {{#if model}}
+            <div class="ui divider"></div>
+
+            {{#ui-accordion class='styled fluid'}}
+                {{#each model as |aoitem|}}
+                    {{#ui-popup content=(concat "Ratio: " aoitem.ratio) position='right center'}}
+                        {{#ui-accordion-section title=aoitem.text}}<p>AOID: {{ aoitem.aoid }} </p>{{/ui-accordion-section}}
+                    {{/ui-popup}}
+                {{/each}}
+            {{/ui-accordion}}
+        {{/if}}
+    </div>
+</div>
