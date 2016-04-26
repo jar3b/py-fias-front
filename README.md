@@ -36,7 +36,7 @@ You will need the following things properly installed on your computer.
         try_files $uri /index.html;
       }
     }
-```
+  ```
 
 ### Code Generators
 
