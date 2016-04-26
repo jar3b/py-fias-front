@@ -1,7 +1,6 @@
 # Fias-face
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Простой фронт-энд для [fias-api](https://github.com/jar3b/py-phias), написан на Ember.js
 
 ## Prerequisites
 
@@ -24,6 +23,20 @@ You will need the following things properly installed on your computer.
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
+* You can use nginx with config like this:
+    ```
+    server {
+      listen 80;
+      server_name fias.example.com;
+      server_tokens off;
+      client_max_body_size 250M;
+      root /var/www/fias-face;
+
+      location / {
+        try_files $uri /index.html;
+      }
+    }
+```
 
 ### Code Generators
 
